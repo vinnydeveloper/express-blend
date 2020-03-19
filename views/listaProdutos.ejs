@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lista de Produtos</title>
+</head>
+<body>
+
+    
+        <h1>Lista de Produtos || Olá <%= usuario.nome %></h1>   
+    <ul>
+        <% listaProdutos.forEach(produto =>{ %>
+            <li><%= produto.nome %>  
+                <form action="/produtos/deletar/<%= produto.id %>?_method=DELETE" method="post">
+                    <button type="submit">deletar</button>
+                </form>
+            </li> 
+        <% }) %>
+       
+    </ul>
+    
+</body>
+</html>
